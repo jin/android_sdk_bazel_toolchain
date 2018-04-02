@@ -1,0 +1,28 @@
+load(":toolchain.bzl", "android_sdk")
+load(":defs.bzl", "adb_bugreport")
+
+android_sdk(
+    name = "android_sdk_darwin_impl",
+    adb = "@androidsdk//:adb",
+    aapt = "@androidsdk//:aapt_binary",
+    aapt2 = "@androidsdk//:aapt2_binary",
+)
+
+
+toolchain_type(name = 'android_sdk_darwin')
+
+toolchain(
+  name = 'android_sdk_darwin_toolchain',
+  toolchain_type = ':android_sdk_darwin',
+  exec_compatible_with = [
+    '@bazel_tools//platforms:osx',
+    '@bazel_tools//platforms:x86_64'],
+  target_compatible_with = [
+    '@bazel_tools//platforms:osx',
+    '@bazel_tools//platforms:x86_64'],
+  toolchain = ':android_sdk_darwin_impl',
+)
+
+adb_bugreport(
+    name = "demo",
+)
