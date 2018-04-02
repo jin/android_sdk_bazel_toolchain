@@ -1,8 +1,8 @@
 # Bazel Android SDK toolchain prototype
 
-This is a prototype of implementing the Android SDK as a [Bazel toolchain](https://docs.bazel.build/versions/master/toolchains.html).
+This is a prototype of the Android SDK as a [Bazel toolchain](https://docs.bazel.build/versions/master/toolchains.html).
 
-The toolchain is defined for macOS. Run `//bazel build :demo --toolchain_resolution_debug -s` to see how we can use it to call `adb bugreport` and generate a bugreport zip.
+The toolchain is defined for macOS. Run `bazel build //:demo --toolchain_resolution_debug -s` to see how we can use it to call `adb bugreport` and generate a bugreport zip.
 
 ```
 ~/code/android-toolchains $ bazel build :demo --toolchain_resolution_debug -s
