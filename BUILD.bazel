@@ -3,9 +3,9 @@ load(":defs.bzl", "adb_bugreport")
 
 android_sdk(
     name = "android_sdk_darwin_impl",
-    adb = "@androidsdk//:adb",
-    aapt = "@androidsdk//:aapt_binary",
-    aapt2 = "@androidsdk//:aapt2_binary",
+    adb = "@androidsdk//:platform-tools/adb",
+    aapt = "@androidsdk//:build-tools/28.0.1/aapt",
+    aapt2 = "@androidsdk//:build-tools/28.0.1/aapt2",
 )
 
 

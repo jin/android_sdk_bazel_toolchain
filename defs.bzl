@@ -1,11 +1,3 @@
-"""Generate a file.
-In this example, the content is passed via an attribute. If you generate
-large files with a lot of static content, consider using
-`ctx.actions.expand_template` instead.
-
-https://github.com/bazelbuild/examples/blob/master/rules/actions_write/file.bzl
-"""
-
 def _impl(ctx):
   sdk = ctx.toolchains['//:android_sdk_darwin']
   adb_bugreport = ctx.outputs.adb_bugreport
